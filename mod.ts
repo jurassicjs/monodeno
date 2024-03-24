@@ -26,6 +26,12 @@ if (existsSync(denoConfigPath)) {
 
   // Continue using your denoConfig object
   const workspaces = denoConfig.workspaces;
+  
+  if (!workspaces?.length || workspaces.length === 0) {
+    console.error(chalk.bgRed("No workspaces found in deno.json"));
+    Deno.exit(1);
+  }
+
   console.log('workspaces: ', workspaces);
 
   // ... the rest of your logic ...
@@ -33,9 +39,7 @@ if (existsSync(denoConfigPath)) {
   
   for (const workspace of workspaces) {
     const chalkName = chalk.hex(colors[colorCounter]);
-    // Construct the path to the task script in the workspace
-    const taskScriptPath = `${workspace}/tasks/${command}.ts`;
-    console.log(chalkName('Running task in: ', taskScriptPath, '\n'));
+    console.log(chalkName('Running task in: ', workspace, '\n'));
     // Start the server in a separate async function
     const promise = (async () => {
       const cmd = new Deno.Command(Deno.execPath(), {

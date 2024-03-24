@@ -1,6 +1,6 @@
 {
   "name": "@jurassicjs/monodeno",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "exports": "./mod.ts",
   "description": "Run deno commands for a monorepo based on deno workspaces.",
   "runtime": ["deno"],
