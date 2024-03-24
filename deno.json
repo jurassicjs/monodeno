@@ -8,6 +8,7 @@
   "imports": {
     "@std/cli": "jsr:@std/cli@^0.220.1",
     "@std/fs": "jsr:@std/fs@^0.220.1",
-    "@std/path": "jsr:@std/path@^0.220.1"
+    "@std/path": "jsr:@std/path@^0.220.1",
+    "chalk": "npm:chalk@^5.3.0"
   }
 }
