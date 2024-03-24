@@ -1,6 +1,6 @@
 import { parseArgs } from "@std/cli/parse_args";
 import { existsSync } from "@std/fs";
-import chalk from "npm:chalk";
+import chalk from "npm:chalk@5.3.0";
 
   const parsedArgs = parseArgs(Deno.args);
   const command = parsedArgs._[0] as string;
