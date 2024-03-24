@@ -5,7 +5,10 @@
   "description": "Run deno commands for a monorepo based on deno workspaces.",
   "runtime": ["deno"],
   "workspaces": ["./"],
-  "imports": { "@std/cli": "jsr:@std/cli@^0.220.1" },
+  "imports": {
+    "@std/cli": "jsr:@std/cli@^0.220.1",
+    "@std/fs": "jsr:@std/fs@^0.220.1"
+  },
   "tasks": {
     "mono": "deno run -A commands/monodeno.ts"
   }

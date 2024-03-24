@@ -1,10 +1,8 @@
-import denoConfig from "../deno.json" with { type: "json" };
-import { parseArgs } from "https://deno.land/std@0.220.1/cli/parse_args.ts";
-import { existsSync } from "https://deno.land/std@0.220.1/fs/mod.ts";
+import { parseArgs } from "@std/cli/parse_args";
+import { existsSync } from "@std/fs";
 import chalk from "npm:chalk";
 
   const parsedArgs = parseArgs(Deno.args);
-  const workspaces = denoConfig.workspaces;
   const command = parsedArgs._[0] as string;
 
   console.log('command in monodeno', command);

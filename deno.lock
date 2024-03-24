@@ -6,6 +6,8 @@
       "jsr:@std/assert@^0.220.1": "jsr:@std/assert@0.220.1",
       "jsr:@std/cli@^0.220.1": "jsr:@std/cli@0.220.1",
       "jsr:@std/fmt@^0.220.1": "jsr:@std/fmt@0.220.1",
+      "jsr:@std/fs@^0.220.1": "jsr:@std/fs@0.220.1",
+      "jsr:@std/path@^0.220.1": "jsr:@std/path@0.220.1",
       "npm:chalk": "npm:chalk@5.3.0"
     },
     "jsr": {
@@ -23,6 +25,16 @@
       },
       "@std/fmt@0.220.1": {
         "integrity": "3b1a698477a26b1dacbbee26db1a65030a005c6d71db3b3a0e59f8a638f04d7a"
+      },
+      "@std/fs@0.220.1": {
+        "integrity": "7fe79c08e9e2ea6818b05f271ddba07eaed7e6dac7ce7cfb35e3f8521aa18fc1",
+        "dependencies": [
+          "jsr:@std/assert@^0.220.1",
+          "jsr:@std/path@^0.220.1"
+        ]
+      },
+      "@std/path@0.220.1": {
+        "integrity": "cc63c1b5e5192e2f718dc2f365a3514fffb26cc0380959bab0f8fb5988a52f0c"
       }
     },
     "npm": {
@@ -137,12 +149,14 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/cli@^0.220.1"
+      "jsr:@std/cli@^0.220.1",
+      "jsr:@std/fs@^0.220.1"
     ],
     "members": {
       "@jurassicjs/monodeno": {
         "dependencies": [
-          "jsr:@std/cli@^0.220.1"
+          "jsr:@std/cli@^0.220.1",
+          "jsr:@std/fs@^0.220.1"
         ]
       }
     }
