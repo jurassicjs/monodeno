@@ -1,6 +1,19 @@
-![mondeo-hero](./public/monodeno-hero.png)
+![mondeo-hero](./public/monodeno.png)
 
-# Monodeno - A JurassicJS package for using deno commands in a monorepo with deno workspaces
+## Usage Example
+
+```bash
+deno task mono <command>
+```
+
+```bash
+deno task mono start
+```
+
+![image](./public/terminal-start.png)
+
+# Monodeno 
+A JurassicJS package for using deno commands in a monorepo with deno workspaces
 
 ## Description
 
@@ -30,18 +43,6 @@ ensure you have workpaces in your deno project. For example, in your `deno.json`
   ]
 }
 ```
-
-## Usage Example
-
-```bash
-deno task mono <command>
-```
-
-```bash
-deno task mono start
-```
-
-![image](./public/terminal-start.png)
 
 This task will run the `start` command in all the workspaces in your monorepo.
 
