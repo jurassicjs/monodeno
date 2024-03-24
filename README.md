@@ -1,3 +1,5 @@
+![mondeo-hero](./public/monodeno-hero.png)
+
 # Monodeno - A JurassicJS package for using deno commands in a monorepo with deno workspaces
 
 ## Description
@@ -9,9 +11,19 @@ Monodeno is a JurassicJS package that provides a simple way to run deno commands
 deno monorepo <command>
 
 ## setup
+
+### Install monodeno
+
+```bash
+deno add  jsr:@jurassicjs/monodeno
+```
+
 ensure you have workpaces in your deno project. For example, in your `deno.json` file, you should have something like this:
 ```json
 {
+  "tasks": {
+    "mono": "deno run -A jsr:@jurassicjs/monodeno",
+  },
   "workspaces": [
     "apps/web",
     "apps/docs",
