@@ -21,8 +21,25 @@ ensure you have workpaces in your deno project. For example, in your `deno.json`
 
 ## Usage Example
 
-```base
-deno monorepo task greet
+```bash
+deno task mono <command>
 ```
 
-This task will run the `greet` command in all the workspaces in your monorepo.
+```bash
+deno task mono start
+```
+
+![image](./public/terminal-start.png)
+
+This task will run the `start` command in all the workspaces in your monorepo.
+
+## Demo Project
+This project has monodeno as a dependency. You can clone the project and run the following command to see how it works.
+
+
+https://github.com/jurassicjs/denomono
+
+
+```bash
+git clone https://github.com/jurassicjs/denomono.git
+```
