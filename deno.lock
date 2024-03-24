@@ -34,7 +34,10 @@
         ]
       },
       "@std/path@0.220.1": {
-        "integrity": "cc63c1b5e5192e2f718dc2f365a3514fffb26cc0380959bab0f8fb5988a52f0c"
+        "integrity": "cc63c1b5e5192e2f718dc2f365a3514fffb26cc0380959bab0f8fb5988a52f0c",
+        "dependencies": [
+          "jsr:@std/assert@^0.220.1"
+        ]
       }
     },
     "npm": {
@@ -150,13 +153,15 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/cli@^0.220.1",
-      "jsr:@std/fs@^0.220.1"
+      "jsr:@std/fs@^0.220.1",
+      "jsr:@std/path@^0.220.1"
     ],
     "members": {
       "@jurassicjs/monodeno": {
         "dependencies": [
           "jsr:@std/cli@^0.220.1",
-          "jsr:@std/fs@^0.220.1"
+          "jsr:@std/fs@^0.220.1",
+          "jsr:@std/path@^0.220.1"
         ]
       }
     }

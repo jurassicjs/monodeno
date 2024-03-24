@@ -7,7 +7,8 @@
   "workspaces": ["./"],
   "imports": {
     "@std/cli": "jsr:@std/cli@^0.220.1",
-    "@std/fs": "jsr:@std/fs@^0.220.1"
+    "@std/fs": "jsr:@std/fs@^0.220.1",
+    "@std/path": "jsr:@std/path@^0.220.1"
   },
   "tasks": {
     "mono": "deno run -A commands/monodeno.ts"
