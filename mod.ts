@@ -2,23 +2,21 @@ import { parseArgs } from "@std/cli/parse_args";
 import { existsSync } from "@std/fs";
 import chalk from "npm:chalk@5.3.0";
 
-  const parsedArgs = parseArgs(Deno.args);
-  const command = parsedArgs._[0] as string;
-
-  console.log('command in monodeno', command);
-  const promises = [];
-  const colors: string[] = [
-    "#007FFF", // Blue
-    "#00FF00", // Green
-    "#FFFF00", // Yellow
-    "#FF00FF", // Magenta
-    "#00FFFF", // Cyan
-    "#90EE90", // Light Green
-    "#4169E1", // Royal Blue
-  ];
+const parsedArgs = parseArgs(Deno.args);
+const command = parsedArgs._[0] as string;
+const promises = [];
+const colors: string[] = [
+  "#007FFF", // Blue
+  "#00FF00", // Green
+  "#FFFF00", // Yellow
+  "#FF00FF", // Magenta
+  "#00FFFF", // Cyan
+  "#90EE90", // Light Green
+  "#4169E1", // Royal Blue
+];
 
 let colorCounter = 0;
-  
+
 const denoConfigPath = `${Deno.cwd()}/deno.json`;
 if (existsSync(denoConfigPath)) {
   const denoConfigText = await Deno.readTextFile(denoConfigPath);
@@ -26,17 +24,12 @@ if (existsSync(denoConfigPath)) {
 
   // Continue using your denoConfig object
   const workspaces = denoConfig.workspaces;
-  
+
   if (!workspaces?.length || workspaces.length === 0) {
     console.error(chalk.bgRed("No workspaces found in deno.json"));
     Deno.exit(1);
   }
 
-  console.log('workspaces: ', workspaces);
-
-  // ... the rest of your logic ...
-
-  
   for (const workspace of workspaces) {
     const chalkName = chalk.hex(colors[colorCounter]);
     console.log(chalkName('Running task in: ', workspace, '\n'));
@@ -69,7 +62,7 @@ if (existsSync(denoConfigPath)) {
         const text = new TextDecoder().decode(value);
         console.error(`Error from ${workspace}:`, text);
       }
-    
+
 
       // Wait for the server to finish for error handling (no promises)
       const { code, stdout, stderr } = await cmd.output();
